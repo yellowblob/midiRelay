@@ -2,16 +2,19 @@ import processing.serial.*;
 import themidibus.*; //Import the library
 import java.util.Map;
 
-
 MidiBus myBus; // The MidiBus
 SimpleMidiListener listener;
-static int[] pitches = {37,39,41,43,45,47,49,51};
+
+JSONArray json;
+int[] pitches;
 HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
 
 void setup() {
   size(400, 400);
   background(0);
   
+  json = loadJSONArray("pitches.json");
+  pitches = json.getIntArray();
   for(int i = 0; i < pitches.length; i++) {
     hm.put(pitches[i],i);
   }
