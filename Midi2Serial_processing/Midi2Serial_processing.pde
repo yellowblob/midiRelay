@@ -46,23 +46,26 @@ void setup() {
   noStroke();
   cp5 = new ControlP5(this);
   cp5.addScrollableList("dropdownSerial")
-     .setPosition(50, 140)
+     .setPosition(50, 130)
      .setSize(200, 100)
      .setBarHeight(20)
      .setItemHeight(20)
+     .setOpen(false)
      .addItems(Serial.list())
      // .setType(ScrollableList.LIST) // currently supported DROPDOWN and LIST
      ;
   cp5.addScrollableList("dropdownMidi")
-     .setPosition(50, 100)
+     .setPosition(50, 80)
      .setSize(200, 100)
      .setBarHeight(20)
      .setItemHeight(20)
+     .setOpen(false)
      .addItems(MidiBus.availableInputs())
      ;
   cp5.addSlider("threshold")
-     .setPosition(100,50)
+     .setPosition(50,30)
      .setRange(0,127)
+     .setSize(200,20)
      .setValue(63)
      ;
   
@@ -78,7 +81,9 @@ void draw() {
     serialControlColor = red;
   }
   fill(serialControlColor);
-  ellipse(30,150,20,20);
+  ellipse(30,140,20,20);
+  fill(255,255,255);
+  text("sth. like \"/DEV/CU.USBMODEM145101\"",50,170);
 }
 
 void noteOn(int channel, int pitch, int velocity) {
