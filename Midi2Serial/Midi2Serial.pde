@@ -5,7 +5,7 @@ import controlP5.*;
 
 MidiBus myBus; // The MidiBus
 SimpleMidiListener listener;
-int threshhold = 63;
+int threshold = 63;
 
 JSONArray json;
 int[] pitches;
@@ -60,11 +60,12 @@ void setup() {
      .setItemHeight(20)
      .addItems(MidiBus.availableInputs())
      ;
-  cp5.addSlider("threshhold")
+  cp5.addSlider("threshold")
      .setPosition(100,50)
      .setRange(0,127)
      .setValue(63)
      ;
+  
 }
 
 void draw() {
@@ -88,7 +89,7 @@ void noteOn(int channel, int pitch, int velocity) {
   println("Channel:"+channel);
   println("Pitch:"+pitch);
   println("Velocity:"+velocity);
-  if(velocity >= threshhold){
+  if(velocity >= threshold){
     int relay = hm.get(pitch);
     println(relay);
     relayStates |= 1 << relay;
