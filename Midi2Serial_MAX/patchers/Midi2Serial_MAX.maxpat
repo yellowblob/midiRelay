@@ -12,7 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 153.0, 79.0, 941.0, 764.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -39,6 +39,85 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 408.0, 940.0, 173.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 284.0, 194.5, 171.0, 20.0 ],
+					"text" : "(sth. like usbmodem145101)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 97.5, 402.5, 50.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 385.0, 39.5, 51.0, 20.0 ],
+					"text" : "velocity"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.0, 402.5, 50.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 277.5, 39.5, 39.0, 20.0 ],
+					"text" : "pitch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 97.5, 373.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 445.0, 38.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 40.0, 373.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 328.0, 38.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "int", "int" ],
+					"patching_rect" : [ 40.0, 319.0, 67.0, 22.0 ],
+					"text" : "unpack 0 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "newobj",
@@ -1140,6 +1219,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 8,
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"order" : 7,
 					"source" : [ "obj-3", 0 ]
@@ -1270,6 +1357,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-49", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"source" : [ "obj-5", 1 ]
 				}
 
 			}
